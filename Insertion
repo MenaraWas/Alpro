@@ -1,0 +1,55 @@
+import java.util.Scanner;
+ 
+/**
+ * 
+ * Menara Lintang Was
+ * 
+ * Insertion Sort.
+ *
+ */
+ 
+public class algoInsertion
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+
+        // Input jumlah Data
+        System.out.print("Masukkan jumlah Data : ");
+        int angka = scan.nextInt();
+
+        // Input nilai tiap Data
+        int[] data = new int[angka]; // Array untuk menampung nilai tiap Data
+        System.out.println();
+        for (int a = 0; a < angka; a++) {
+            System.out.print("Nilai Data ke-" + (a + 1) + " : ");
+            data[a] = scan.nextInt();
+        }
+
+        // Tampilkan Data Sebelum di Sorting
+        System.out.print("\nData Sebelum di Sorting : ");
+        for (int a = 0; a < angka; a++)
+            System.out.print(data[a] + " ");
+
+        //  Proses Insertion Sort
+        for(int a = 0; a < angka-1; a++)
+        {
+            for(int b = a+1; b > 0; b--)
+            {
+                if(data[b] > data[b-1])
+                {            
+                    //  Proses Pertukaran
+                    int temp = data[b];
+                    data[b] = data[b-1];
+                    data[b-1] = temp;
+                }
+            }
+        }
+         
+        //  Tampilkan hasil Sorting
+        System.out.print("\nData setelah di Sorting : ");
+        for(int a = 0; a < angka; a++)
+            System.out.print(data[a]+" ");
+         
+    }
+}
