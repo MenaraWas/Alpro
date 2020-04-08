@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class algoExchange {
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        // Input jumlah Data
+        System.out.print("Masukkan jumlah Data : ");
+        int angka = scan.nextInt();
+
+        // Input nilai tiap Data
+        int[] data = new int[angka]; // Angkaay untuk menampung nilai tiap Data
+        System.out.println();
+        for (int a = 0; a < angka; a++) {
+            System.out.print("Nilai Data ke-" + (a + 1) + " : ");
+            data[a] = scan.nextInt();
+        }
+
+        // Tampilkan Data Sebelum di Sorting
+        System.out.print("\nData Sebelum di Sorting : ");
+        for (int a = 0; a < angka; a++)
+            System.out.print(data[a] + " ");
+
+        for (int i = 0; i < angka - 1; i++) {
+            for (int j = i + 1; j < angka; j++) {
+                if (data[i] < data[j]) {
+                    int temp = data[i];
+                    data[i] = data[j];
+                    data[j] = temp;
+                }
+            }
+        }
+        System.out.print("\nData setelah di Sorting : ");
+        for(int a = 0; a < angka; a++)
+            System.out.print(data[a]+" ");
+        
+    }
+}
